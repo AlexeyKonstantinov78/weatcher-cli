@@ -19,6 +19,10 @@
   "author": "Aleksey Konstantinov",
   "license": "ISC",
   "homepage": "https://alekseykonstantinov.ru/",  
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/AlexeyKonstantinov78/weatcher-cli"
+  }, 
   "dependencies": {
     "axios": "^1.2.2"
   }
