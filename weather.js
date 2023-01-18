@@ -1,13 +1,12 @@
 #!/usr/bin/env 
 import { getArgs } from './helpers/args.js';
+import { printHelp } from './services/log.service.js';
 
 const initCLI = () => {
-  console.log('start cli');
-  console.log(process.argv);
   const args = getArgs(process.argv);
-  console.log(args);
+  
   if(args.h) {
-    // вывод help
+    printHelp();
   }
   if (args.s) {
     // сохранить город
