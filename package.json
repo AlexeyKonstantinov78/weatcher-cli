@@ -26,7 +26,7 @@
     "url": "https://github.com/AlexeyKonstantinov78/weatcher-cli"
   },
   "dependencies": {
-    "axios": "^1.2.2",
+    "axios": "1.2.3",
     "chalk": "5.2.0",
     "dedent-js": "1.0.1"
   }
