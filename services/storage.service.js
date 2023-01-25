@@ -1,9 +1,14 @@
 // получить домашную директорию с помощю библиотеки os
 import { homedir } from 'os';
-import { join, basename, dirname, extname, relative, isAbsolute, resolve, sep } from 'path';
+import { join } from 'path';
 import { promises } from 'fs';
 
 const filePath = join(homedir(), 'weather-data.json');
+
+const TOKEN_DICTIONARY = {
+  token: 'token',
+  city: 'city',
+};
 
 const saveKeyValue = async (key, value) => {
   console.log(filePath);
@@ -25,7 +30,7 @@ const getKeyValue = async (key) => {
     const file = await promises.readFile(filePath);
     const data = JSON.parse(file);
     return data[key];
-  } 
+  }
   return undefined;
 };
 
@@ -38,4 +43,4 @@ const isExist = async (path) => {
   }
 };
 
-export { saveKeyValue, getKeyValue };
+export { saveKeyValue, getKeyValue, TOKEN_DICTIONARY };
