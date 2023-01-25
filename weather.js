@@ -19,6 +19,9 @@ if (!token.length) {
 
 const initCLI = () => {
   const args = getArgs(process.argv);    
+
+  console.log(process.env);
+
   if(args.h) {
     return printHelp();
   }
