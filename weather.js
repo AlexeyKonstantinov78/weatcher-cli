@@ -1,7 +1,7 @@
 #!/usr/bin/env 
 import { getArgs } from './helpers/args.js';
 import { getWeather } from './services/api.service.js';
-import { printHelp, printSuccess, printError } from './services/log.service.js';
+import { printHelp, printSuccess, printError, printWeather } from './services/log.service.js';
 import { saveKeyValue, TOKEN_DICTIONARY } from './services/storage.service.js';
 
 const saveToken = async (token) => {
@@ -17,8 +17,7 @@ if (!token.length) {
   }
 }
 
-const saveCity = async (city) => {
-  console.log(city.length);
+const saveCity = async (city) => {  
   if(!city.length) {
     printError('Невведен город');
     return;
@@ -33,8 +32,9 @@ const saveCity = async (city) => {
 
 const getForcast = async () => {
   try {
-    const weather = await getWeather('чебоксары');
+    const weather = await getWeather();    
     console.log(weather);
+    printWeather(weather);
   } catch (e) {
     if (e?.response?.status === 404) {
       printError('Неверно указан город');
@@ -61,7 +61,7 @@ const initCLI = () => {
     return saveToken(args.t);    
   }
   // вывести погоду  
-  getForcast();
+  return getForcast();
 };
 
 initCLI();
