@@ -17,6 +17,20 @@ if (!token.length) {
   }
 }
 
+const saveCity = async (city) => {
+  console.log(city.length);
+  if(!city.length) {
+    printError('Невведен город');
+    return;
+  }
+  try {
+    await saveKeyValue(TOKEN_DICTIONARY.city, city);
+    printSuccess('Город сохранен');
+  } catch (e) {
+    printError(e.message);
+  }
+}
+
 const getForcast = async () => {
   try {
     const weather = await getWeather('чебоксары');
@@ -40,6 +54,7 @@ const initCLI = () => {
   }
   if (args.s) {
     // сохранить город
+    return saveCity(args.s);
   }
   if(args.t) {
     // сохранить токен
