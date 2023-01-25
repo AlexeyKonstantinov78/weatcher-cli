@@ -32,8 +32,7 @@ const saveCity = async (city) => {
 
 const getForcast = async () => {
   try {
-    const weather = await getWeather();    
-    console.log(weather);
+    const weather = await getWeather();        
     printWeather(weather);
   } catch (e) {
     if (e?.response?.status === 404) {
