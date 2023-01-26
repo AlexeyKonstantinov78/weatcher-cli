@@ -1,10 +1,10 @@
 {
   "name": "weather-cli-kav",
-  "version": "1.0.3",
+  "version": "1.0.6",
   "description": "cli for weather",
   "main": "weather.js",  
   "bin": {
-    "weather": "./weather.js"
+    "weather": "weather.js"
   },
   "type": "module",  
   "scripts": {
@@ -23,7 +23,7 @@
     "url": "https://github.com/AlexeyKonstantinov78/weatcher-cli"
   },
   "dependencies": {
-    "axios": "1.2.3",
+    "axios": "1.2.4",
     "chalk": "5.2.0",
     "dedent-js": "1.0.1"
   }
